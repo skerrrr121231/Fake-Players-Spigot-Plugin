@@ -5,6 +5,7 @@ import me.KP56.FakePlayers.Action.ActionWait;
 import me.KP56.FakePlayers.MultiVersion.Version;
 import me.KP56.FakePlayers.MultiVersion.v1_12_R1;
 import me.KP56.FakePlayers.MultiVersion.v1_16_R3;
+import me.KP56.FakePlayers.MultiVersion.v1_17_R1;
 import me.KP56.FakePlayers.MultiVersion.v1_8_R3;
 import me.KP56.FakePlayers.PluginUtils.*;
 import org.bukkit.Bukkit;
@@ -98,8 +99,10 @@ public class FakePlayer {
             }
         }
 
-        if (Main.getPlugin().getVersion() == Version.v1_16_R3) {
+        if (Main.getPlugin().getVersion() == Version.v1_17_R1) {
             entityPlayer = v1_16_R3.spawn(this);
+        } else if (Main.getPlugin().getVersion() == Version.v1_16_R3) {
+            entityPlayer = v1_16_R3.spawn(this);    
         } else if (Main.getPlugin().getVersion() == Version.v1_12_R1) {
             entityPlayer = v1_12_R1.spawn(this);
         } else if (Main.getPlugin().getVersion() == Version.v1_8_R3) {
@@ -135,8 +138,10 @@ public class FakePlayer {
     }
 
     public void removePlayer() {
-        if (Main.getPlugin().getVersion() == Version.v1_16_R3) {
-            v1_16_R3.removePlayer(this);
+        if (Main.getPlugin().getVersion() == Version.v1_17_R1) {
+            v1_17_R1.removePlayer(this);
+        } else if (Main.getPlugin().getVersion() == Version.v1_16_R3) {
+            v1_16_R3.removePlayer(this);    
         } else if (Main.getPlugin().getVersion() == Version.v1_12_R1) {
             v1_12_R1.removePlayer(this);
         } else if (Main.getPlugin().getVersion() == Version.v1_8_R3) {
